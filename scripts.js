@@ -50,6 +50,7 @@ $.ajaxSetup({
   }
 });
 
+/*
 $.get(peopleUrl, null, function (data) {
   shuffle(data);
   React.render(
@@ -57,6 +58,7 @@ $.get(peopleUrl, null, function (data) {
     document.getElementById('atlas')
   );
 });
+*/
 
 function shuffle(data) {
   var m = data.length, t, i;
