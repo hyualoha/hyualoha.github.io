@@ -1,23 +1,25 @@
-/*! aloha-web-www - 2015-05-14
+/*! aloha-web-www - 2016-04-06
 * https://www.hyualoha.kr/
-* Copyright (c) 2015 류형욱 */
+* Copyright (c) 2016 류형욱 */
 'use strict';
 !function(){/* global daum:false */
 
-var mapContainer = document.getElementById('map');
-var mapOption = {
-    center: new daum.maps.LatLng(37.55587972338268, 127.04939368521907),
-    level: 3,
-    draggable: false,
-    marker: [{
-      position: new daum.maps.LatLng(37.55587972338268, 127.04939368521907), 
-      text: '한양대학교 정보통신관 학생회실'
-    }]
-  };
+(function () {
+  var mapContainer = document.getElementById('map');
+  var mapOption = {
+      center: new daum.maps.LatLng(37.55587972338268, 127.04939368521907),
+      level: 3,
+      draggable: false,
+      marker: [{
+        position: new daum.maps.LatLng(37.55587972338268, 127.04939368521907), 
+        text: '한양대학교 정보통신관 학생회실'
+      }]
+    };
 
-setTimeout(function () {
-  new daum.maps.StaticMap(mapContainer, mapOption);  
-}, 0);}();
+  setTimeout(function () {
+    new daum.maps.StaticMap(mapContainer, mapOption);  
+  }, 0);
+})();}();
 !function(){var Person = React.createClass({displayName: "Person",
   render: function() {
     return (
@@ -28,7 +30,7 @@ setTimeout(function () {
   }
 });
 
-var peopleUrl = 'https://info.hyualoha.kr/api/1/people';
+var peopleUrl = 'https://violet.bluherbsoft.com/people';
 
 var People = React.createClass({displayName: "People",
   render: function() {
@@ -50,7 +52,6 @@ $.ajaxSetup({
   }
 });
 
-/*
 $.get(peopleUrl, null, function (data) {
   shuffle(data);
   React.render(
@@ -58,7 +59,6 @@ $.get(peopleUrl, null, function (data) {
     document.getElementById('atlas')
   );
 });
-*/
 
 function shuffle(data) {
   var m = data.length, t, i;
@@ -70,6 +70,5 @@ function shuffle(data) {
   }  
 }
 
-// pink: 머신 러닝 서버
-// violet: API 서버
+// pink: ML server
 }();
